@@ -223,7 +223,7 @@ body {
 
 /* Section Container */
 .section-container {
-    max-width: 900px;
+    max-width: 1200px;
     width: 100%;
     text-align: center;
     padding: 40px 20px;
@@ -247,33 +247,34 @@ body {
 /* Photos Grid */
 .photos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
     margin-bottom: 50px;
 }
 
 .photo-item {
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.7);
     border-radius: 20px;
-    padding: 20px;
+    padding: 15px;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(201, 160, 160, 0.1);
 }
 
 .photo-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(201, 160, 160, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(201, 160, 160, 0.25);
 }
 
 .photo-box {
     width: 100%;
-    aspect-ratio: 4/3;
-    background: linear-gradient(135deg, #F5E6D3 0%, #E8D5D5 100%);
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #FFE5E5 0%, #FFF0F0 100%);
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 15px;
     overflow: hidden;
+    position: relative;
 }
 
 .photo-img {
@@ -281,12 +282,18 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.photo-item:hover .photo-img {
+    transform: scale(1.05);
 }
 
 .photo-error {
-    font-size: 0.9rem;
-    color: #B0A0A0;
+    font-size: 0.85rem;
+    color: #C9A0A0;
     text-align: center;
+    padding: 20px;
 }
 
 .photo-placeholder {
@@ -629,7 +636,8 @@ body {
     }
     
     .photos-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
     }
     
     .letter {
@@ -638,5 +646,17 @@ body {
     
     .hidden-text {
         font-size: 1.8rem;
+    }
+    
+    .dday-number {
+        font-size: 2.5rem;
+    }
+    
+    .letter-form {
+        padding: 20px;
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
     }
 }
