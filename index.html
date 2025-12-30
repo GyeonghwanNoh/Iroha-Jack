@@ -14,9 +14,9 @@
     <div id="lockScreen" class="screen active">
         <div class="lock-container">
             <h1 class="lock-title">Only for You</h1>
-            <p class="lock-subtitle">"This little place opens with a date you already know."</p>
+            <p class="lock-subtitle">"우리가 처음 시작한 날을 기억해?"</p>
             <input type="password" id="passwordInput" class="password-input" maxlength="4" placeholder="••••" autocomplete="off">
-            <p class="lock-hint">hint: your favourite person's birthday</p>
+            <p class="lock-hint">힌트: 우리가 사귀기 시작한 날 (MMDD)</p>
             <p id="errorMsg" class="error-msg"></p>
         </div>
     </div>
@@ -74,16 +74,16 @@
     <!-- Letter Section -->
     <div id="letterSection" class="screen">
         <div class="section-container">
-            <h2 class="section-title">마지막으로</h2>
+            <h2 class="section-title">새해를 맞이하며</h2>
             
             <div class="letter">
-                <p>올해가 어떻게 흘러갈지는 모르겠지만,<br>한 가지는 알아.</p>
+                <p>새해가 시작됐어.<br>새로운 시작, 새로운 우리.</p>
                 
-                <p>너랑 있는 게 좋아.<br>평범한 날들에도.<br>조용한 순간들에도.</p>
+                <p>앞으로 어떤 일들이 기다리고 있을지 모르겠지만,<br>너랑 함께라면 다 좋을 것 같아.</p>
                 
-                <p>너여서 고마워.</p>
+                <p>평범한 날들도.<br>특별한 순간들도.<br>모두 너와 함께하고 싶어.</p>
                 
-                <p class="letter-closing">새해 복 많이 받아 🤍<br>네가 그 사람이라서 정말 다행이야.</p>
+                <p class="letter-closing">2026년, 우리에게 더 많은 행복이 가득하길 🤍<br>새해 복 많이 받아, 사랑해.</p>
             </div>
             
             <button class="btn-next" onclick="showSection('mainScreen')">홈으로 🏠</button>
@@ -125,7 +125,16 @@
             <!-- Write Letter Tab -->
             <div id="writeTab" class="letter-tab active">
                 <div class="letter-form">
-                    <input type="text" id="letterFrom" class="letter-input" placeholder="보내는 사람 (너/나)" maxlength="10">
+                    <div class="letter-from-selector">
+                        <label class="from-option">
+                            <input type="radio" name="letterFrom" value="공주님 💖" checked>
+                            <span>공주님 💖</span>
+                        </label>
+                        <label class="from-option">
+                            <input type="radio" name="letterFrom" value="왕자님 💙">
+                            <span>왕자님 💙</span>
+                        </label>
+                    </div>
                     <textarea id="letterContent" class="letter-textarea" placeholder="하고 싶은 말을 써줘..."></textarea>
                     <button class="btn-send" onclick="sendLetter()">편지 보내기 💌</button>
                 </div>

@@ -4,7 +4,7 @@ const lockScreen = document.getElementById('lockScreen');
 const mainScreen = document.getElementById('mainScreen');
 const errorMsg = document.getElementById('errorMsg');
 
-const correctPassword = '0729';
+const correctPassword = '0903';
 
 // Audio Context for sounds
 let audioContext;
@@ -137,9 +137,9 @@ function showHidden() {
 
 // Coupon functionality
 const coupons = [
-    "오늘 하루 공주님 앞에서 졸려하지 않기 😴❌",
-    "키스 1시간 💋\n(중간 휴식 불가능)",
-    "오늘 하루 공주님만 바라보기 👀💕"
+    "🌙✨ 오늘 하루 공주님 앞에서\n절대 졸려하지 않기 ✨🌙\n😴❌ (만약 졸면 벌칙 각오)",
+    "💋 황금 키스 타임 1시간 💋\n⏰ 중간 휴식 불가능 ⏰\n💕 쉬지 말고 계속! 💕",
+    "👑 오늘 하루 공주님만 바라보기 👑\n👀💖 다른 거 보면 안 됨! 💖👀\n✨ 오직 공주님에게만 집중 ✨"
 ];
 
 let todayCoupon = null;
@@ -307,7 +307,8 @@ function showTab(tabName) {
 }
 
 function sendLetter() {
-    const from = document.getElementById('letterFrom').value.trim();
+    const fromRadio = document.querySelector('input[name="letterFrom"]:checked');
+    const from = fromRadio ? fromRadio.value : '';
     const content = document.getElementById('letterContent').value.trim();
     
     if (!from || !content) {
@@ -334,7 +335,7 @@ function sendLetter() {
     localStorage.setItem('ourLetters', JSON.stringify(letters));
     
     // Clear form
-    document.getElementById('letterFrom').value = '';
+    document.querySelector('input[name="letterFrom"][value="공주님 💖"]').checked = true;
     document.getElementById('letterContent').value = '';
     
     // Show success message

@@ -466,6 +466,50 @@ body {
     border-radius: 20px;
 }
 
+.letter-from-selector {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.from-option {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid #E8D5D5;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #C9A0A0;
+}
+
+.from-option:hover {
+    background: rgba(255, 245, 245, 1);
+    border-color: #FFB6B6;
+    transform: translateY(-2px);
+}
+
+.from-option input[type="radio"] {
+    display: none;
+}
+
+.from-option input[type="radio"]:checked + span {
+    color: #FF6B6B;
+}
+
+.from-option:has(input[type="radio"]:checked) {
+    background: linear-gradient(135deg, #FFF5F5 0%, #FFE5E5 100%);
+    border-color: #FF9999;
+    box-shadow: 0 4px 15px rgba(255, 153, 153, 0.3);
+}
+
 .letter-input {
     width: 100%;
     padding: 15px;
@@ -672,13 +716,36 @@ body {
     background: linear-gradient(135deg, #FFF5F5 0%, #FFE5E5 100%);
     border-radius: 25px;
     padding: 40px 30px;
-    box-shadow: 0 8px 30px rgba(201, 160, 160, 0.3);
-    border: 3px dashed #E8C5C5;
+    box-shadow: 0 12px 40px rgba(255, 153, 153, 0.4);
+    border: 3px dashed #FF9999;
+    position: relative;
+    animation: glowPulse 3s ease-in-out infinite;
 }
 
-.coupon-header {
-    display: flex;
-    justify-content: space-between;
+@keyframes glowPulse {
+    0%, 100% {
+        box-shadow: 0 12px 40px rgba(255, 153, 153, 0.4);
+    }
+    50% {
+        box-shadow: 0 12px 50px rgba(255, 153, 153, 0.6);
+    }6B6B 0%, #FF9999 100%);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.5);
+    animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }space-between;
     align-items: center;
     margin-bottom: 30px;
 }
@@ -686,30 +753,54 @@ body {
 .coupon-badge {
     background: linear-gradient(135deg, #FF9999 0%, #FFB6B6 100%);
     color: white;
-    padding: 8px 20px;
+    padding: 8pxlinear-gradient(135deg, #FFFFFF 0%, #FFF9F9 100%);
     border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-}
-
-.coupon-date {
-    font-size: 0.9rem;
-    color: #B0A0A0;
-}
-
-.coupon-content {
-    background: white;
-    border-radius: 20px;
-    padding: 40px 30px;
-    min-height: 150px;
+    padding: 50px 30px;
+    min-height: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
+    border: 2px solid #FFD5D5;
+    box-shadow: 0 8px 25px rgba(255, 153, 153, 0.2);
 }
 
 .coupon-text {
+    font-size: 1.5rem;
+    color: #FF6B6B;
+    font-weight: 700;
+    text-align: center;
+    line-height: 2;
+    white-space: pre-line;
+    text-shadow: 0 2px 4px rgba(255, 107, 107, 0.1);
+    animation: textGlow 2s ease-in-out infinite;
+}
+
+@keyframes textGlow {
+    0%, 100% {
+        text-shadow: 0 2px 4px rgba(255, 107, 107, 0.1);
+    }
+    50% {
+        text-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
+    };
+    align-items: center;
+    justify-content: center;
+    margin-bott1rem;
+    color: #FF9999;
+    margin-top: 25px;
+    font-style: italic;
+    font-weight: 600;
+    animation: noticeShine 2s ease-in-out infinite;
+}
+
+@keyframes noticeShine {
+    0%, 100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+    }
     font-size: 1.4rem;
     color: #5A4A42;
     font-weight: 500;
@@ -727,21 +818,47 @@ body {
 
 .btn-coupon {
     width: 100%;
-    background: linear-gradient(135deg, #FFB6B6 0%, #FF9999 100%);
+    background: linear-gradient(135deg, #FF6B6B 0%, #FF9999 50%, #FFB6B6 100%);
     color: white;
     border: none;
-    padding: 18px;
-    font-size: 1.2rem;
+    padding: 20px;
+    font-size: 1.3rem;
     font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    border-radius: 20px;
+    font-weight: 700;
+    border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 153, 153, 0.4);
+    box-shadow: 0 6px 25px rgba(255, 107, 107, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-coupon::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
 }
 
 .btn-coupon:hover:not(:disabled) {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 25px rgba(255, 153, 153, 0.5);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 35px rgba(255, 107, 107, 0.7);
+}
+
+.btn-coupon:active:not(:disabled) {
+    transform: translateY(-2px) scale(0.98);
 }
 
