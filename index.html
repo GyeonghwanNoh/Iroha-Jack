@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Only for You 🤍</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Lock Screen -->
+    <div id="lockScreen" class="screen active">
+        <div class="lock-container">
+            <h1 class="lock-title">Only for You</h1>
+            <p class="lock-subtitle">"This little place opens with a date you already know."</p>
+            <input type="password" id="passwordInput" class="password-input" maxlength="4" placeholder="••••" autocomplete="off">
+            <p class="lock-hint">hint: your favourite person's birthday</p>
+            <p id="errorMsg" class="error-msg"></p>
+        </div>
+    </div>
+
+    <!-- Main Screen -->
+    <div id="mainScreen" class="screen">
+        <div class="main-container">
+            <div class="main-content">
+                <h2 class="main-title">"I made a tiny secret place."</h2>
+                <p class="main-subtitle">Just for you.</p>
+                <p class="main-text">"I wanted to start this year with you smiling."</p>
+                <button class="btn-open" onclick="showSection('photosSection')">Open it 🤍</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Photos Section -->
+    <div id="photosSection" class="screen">
+        <div class="section-container">
+            <h2 class="section-title">Our Little Moments</h2>
+            <p class="section-subtitle">"Nothing big. Just us."</p>
+            
+            <div class="photos-grid">
+                <div class="photo-item">
+                    <div class="photo-placeholder">
+                        <span class="photo-number">1</span>
+                    </div>
+                    <p class="photo-caption">"This was a good day."</p>
+                </div>
+                
+                <div class="photo-item">
+                    <div class="photo-placeholder">
+                        <span class="photo-number">2</span>
+                    </div>
+                    <p class="photo-caption">"I like this version of you."</p>
+                </div>
+                
+                <div class="photo-item">
+                    <div class="photo-placeholder">
+                        <span class="photo-number">3</span>
+                    </div>
+                    <p class="photo-caption">"I still remember this moment."</p>
+                </div>
+                
+                <div class="photo-item">
+                    <div class="photo-placeholder">
+                        <span class="photo-number">4</span>
+                    </div>
+                    <p class="photo-caption">"You looked really cute here."</p>
+                </div>
+                
+                <div class="photo-item">
+                    <div class="photo-placeholder">
+                        <span class="photo-number">5</span>
+                    </div>
+                    <p class="photo-caption">"This made me happy."</p>
+                </div>
+                
+                <div class="photo-item">
+                    <div class="photo-placeholder">
+                        <span class="photo-number">6</span>
+                    </div>
+                    <p class="photo-caption">"We were us."</p>
+                </div>
+                
+                <div class="photo-item">
+                    <div class="photo-placeholder">
+                        <span class="photo-number">7</span>
+                    </div>
+                    <p class="photo-caption">"I didn't say it then, but I loved this."</p>
+                </div>
+                
+                <div class="photo-item">
+                    <div class="photo-placeholder">
+                        <span class="photo-number">8</span>
+                    </div>
+                    <p class="photo-caption">"This one stayed in my head."</p>
+                </div>
+                
+                <div class="photo-item">
+                    <div class="photo-placeholder">
+                        <span class="photo-number">9</span>
+                    </div>
+                    <p class="photo-caption">"I felt comfortable."</p>
+                </div>
+                
+                <div class="photo-item">
+                    <div class="photo-placeholder">
+                        <span class="photo-number">10</span>
+                    </div>
+                    <p class="photo-caption">"I hope we remember this forever."</p>
+                </div>
+            </div>
+            
+            <button class="btn-next" onclick="showSection('checklistSection')">Next 🤍</button>
+        </div>
+    </div>
+
+    <!-- Checklist Section -->
+    <div id="checklistSection" class="screen">
+        <div class="section-container">
+            <h2 class="section-title">Small Things I Like</h2>
+            
+            <div class="checklist">
+                <label class="checkbox-item">
+                    <input type="checkbox" onchange="playPop()">
+                    <span class="checkbox-text">the way you smile</span>
+                </label>
+                
+                <label class="checkbox-item">
+                    <input type="checkbox" onchange="playPop()">
+                    <span class="checkbox-text">how you talk about random things</span>
+                </label>
+                
+                <label class="checkbox-item">
+                    <input type="checkbox" onchange="playPop()">
+                    <span class="checkbox-text">when you pretend you're not cute</span>
+                </label>
+                
+                <label class="checkbox-item">
+                    <input type="checkbox" onchange="playPop()">
+                    <span class="checkbox-text">how you make things feel easy</span>
+                </label>
+                
+                <label class="checkbox-item">
+                    <input type="checkbox" onchange="playPop()">
+                    <span class="checkbox-text">being next to you</span>
+                </label>
+            </div>
+            
+            <p class="checklist-footer">"I notice more than you think."</p>
+            
+            <button class="btn-next" onclick="showSection('letterSection')">Next 🤍</button>
+        </div>
+    </div>
+
+    <!-- Letter Section -->
+    <div id="letterSection" class="screen">
+        <div class="section-container">
+            <h2 class="section-title">One Last Thing</h2>
+            
+            <div class="letter">
+                <p>I don't know how this year will go,<br>but I know one thing.</p>
+                
+                <p>I like being with you.<br>In normal days.<br>In quiet moments.</p>
+                
+                <p>Thank you for being you.</p>
+                
+                <p class="letter-closing">Happy New Year 🤍<br>I'm really glad it's you.</p>
+            </div>
+            
+            <button class="btn-next" onclick="showHidden()">One more?</button>
+        </div>
+    </div>
+
+    <!-- Hidden Message -->
+    <div id="hiddenSection" class="screen">
+        <div class="section-container">
+            <div class="hidden-message">
+                <p class="hidden-text">"If I could choose again,<br>I'd still choose you."</p>
+                <p class="hidden-footer">0729 unlocked this.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
