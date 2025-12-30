@@ -187,13 +187,7 @@ const photos = [
     { file: '36.jpg' },
     { file: '37.jpg' },
     { file: '38.jpg' },
-    { file: '39.jpg' },
-    { file: '40.jpg' },
-    { file: '41.jpg' },
-    { file: '42.jpg' },
-    { file: '43.jpg' },
-    { file: '44.jpg' },
-    { file: '45.jpg' }
+    { file: '39.jpg' }
 ];
 
 // Load Photos
