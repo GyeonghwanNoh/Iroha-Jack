@@ -147,21 +147,21 @@ function calculateDday() {
     }
 }
 
-// Photo Configuration - 여기에 사진 파일명과 캡션을 추가하세요!
+// Photo Configuration - 여기에 사진 파일명만 추가하세요!
 const photos = [
-    { file: '1.jpg', caption: '"좋은 날이었어."' },
-    { file: '2.jpg', caption: '"이런 네 모습 좋아해."' },
-    { file: '3.jpg', caption: '"이 순간 아직도 기억나."' },
-    { file: '4.jpg', caption: '"여기서 진짜 귀여웠어."' },
-    { file: '5.jpg', caption: '"이 날 행복했어."' },
-    { file: '6.jpg', caption: '"우리는 우리였어."' },
-    { file: '7.jpg', caption: '"그땐 말 안 했지만, 좋았어."' },
-    { file: '8.jpg', caption: '"이 장면 머릿속에 남았어."' },
-    { file: '9.jpg', caption: '"편안했어."' },
-    { file: '10.jpg', caption: '"영원히 기억했으면 좋겠어."' }
-    // 원하는 만큼 추가하세요!
-    // { file: '11.jpg', caption: '"새로운 사진"' },
-    // { file: '12.jpg', caption: '"또 다른 순간"' },
+    { file: '1.jpg' },
+    { file: '2.jpg' },
+    { file: '3.jpg' },
+    { file: '4.jpg' },
+    { file: '5.jpg' },
+    { file: '6.jpg' },
+    { file: '7.jpg' },
+    { file: '8.jpg' },
+    { file: '9.jpg' },
+    { file: '10.jpg' }
+    // 사진 더 추가하려면:
+    // { file: '11.jpg' },
+    // { file: '12.jpg' },
 ];
 
 // Load Photos
@@ -178,7 +178,6 @@ function loadPhotos() {
                 <img src="photos/${photo.file}" alt="우리의 순간" class="photo-img" 
                      onerror="this.parentElement.innerHTML='<span class=\\"photo-error\\">사진을 불러올 수 없어요</span>'">
             </div>
-            <p class="photo-caption">${photo.caption}</p>
         `;
         
         grid.appendChild(photoItem);
