@@ -136,7 +136,7 @@ function showHidden() {
 
 // D-day Calculator
 function calculateDday() {
-    const startDate = new Date('2024-09-03');
+    const startDate = new Date('2025-09-03');
     const today = new Date();
     const diffTime = Math.abs(today - startDate);
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));

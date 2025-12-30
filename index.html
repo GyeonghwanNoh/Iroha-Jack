@@ -21,19 +21,37 @@
         </div>
     </div>
 
-    <!-- Main Screen -->
+    <!-- Main Screen (Menu) -->
     <div id="mainScreen" class="screen">
         <div class="main-container">
             <div class="main-content">
                 <div class="dday-container">
                     <p class="dday-label">우리 함께한 지</p>
                     <h3 class="dday-number" id="ddayCount">0</h3>
-                    <p class="dday-date">2024.09.03 ~</p>
+                    <p class="dday-date">2025.09.03 ~</p>
                 </div>
                 <h2 class="main-title">"작은 비밀 공간을 하나 만들었어."</h2>
                 <p class="main-subtitle">오직 너만을 위해.</p>
                 <p class="main-text">"올해는 네가 웃는 모습으로 시작하고 싶었어."</p>
-                <button class="btn-open" onclick="showSection('photosSection')">열어보기 🤍</button>
+                
+                <div class="menu-grid">
+                    <button class="menu-btn" onclick="showSection('photosSection')">
+                        <span class="menu-icon">📸</span>
+                        <span class="menu-text">우리의 사진첩</span>
+                    </button>
+                    <button class="menu-btn" onclick="showSection('letterSection')">
+                        <span class="menu-icon">💌</span>
+                        <span class="menu-text">마음을 담은 편지</span>
+                    </button>
+                    <button class="menu-btn" onclick="showSection('letterSection2')">
+                        <span class="menu-icon">✉️</span>
+                        <span class="menu-text">우리의 편지함</span>
+                    </button>
+                    <button class="menu-btn" onclick="showHidden()">
+                        <span class="menu-icon">🎁</span>
+                        <span class="menu-text">특별한 메시지</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -116,45 +134,7 @@
                 </div>
             </div>
             
-            <button class="btn-next" onclick="showSection('checklistSection')">다음 🤍</button>
-        </div>
-    </div>
-
-    <!-- Checklist Section -->
-    <div id="checklistSection" class="screen">
-        <div class="section-container">
-            <h2 class="section-title">내가 좋아하는 작은 것들</h2>
-            
-            <div class="checklist">
-                <label class="checkbox-item">
-                    <input type="checkbox" onchange="playPop()">
-                    <span class="checkbox-text">네가 웃는 방식</span>
-                </label>
-                
-                <label class="checkbox-item">
-                    <input type="checkbox" onchange="playPop()">
-                    <span class="checkbox-text">아무 얘기나 하는 것</span>
-                </label>
-                
-                <label class="checkbox-item">
-                    <input type="checkbox" onchange="playPop()">
-                    <span class="checkbox-text">귀엽지 않은 척 할 때</span>
-                </label>
-                
-                <label class="checkbox-item">
-                    <input type="checkbox" onchange="playPop()">
-                    <span class="checkbox-text">모든 걸 편하게 만들어주는 것</span>
-                </label>
-                
-                <label class="checkbox-item">
-                    <input type="checkbox" onchange="playPop()">
-                    <span class="checkbox-text">네 옆에 있는 것</span>
-                </label>
-            </div>
-            
-            <p class="checklist-footer">"생각보다 많은 걸 보고 있어."</p>
-            
-            <button class="btn-next" onclick="showSection('letterSection')">다음 🤍</button>
+            <button class="btn-next" onclick="showSection('mainScreen')">홈으로 🏠</button>
         </div>
     </div>
 
@@ -173,13 +153,18 @@
                 <p class="letter-closing">새해 복 많이 받아 🤍<br>네가 그 사람이라서 정말 다행이야.</p>
             </div>
             
-            <button class="btn-next" onclick="showHidden()">하나 더?</button>
+            <button class="btn-next" onclick="showSection('mainScreen')">홈으로 🏠</button>
         </div>
     </div>
 
     <!-- Hidden Message -->
     <div id="hiddenSection" class="screen">
-            <button class="btn-next" onclick="showSection('letterSection2')">우리의 편지함 💌</button>
+        <div class="section-container">
+            <div class="hidden-message">
+                <p class="hidden-text">"다시 선택할 수 있다 해도,<br>난 여전히 너를 선택할 거야."</p>
+                <p class="hidden-footer">0729가 열어준 메시지</p>
+            </div>
+            <button class="btn-next" onclick="showSection('mainScreen')">홈으로 🏠</button>
         </div>
     </div>
 
@@ -209,11 +194,8 @@
                     <p class="no-letters">아직 편지가 없어요</p>
                 </div>
             </div>
-        <div class="section-container">
-            <div class="hidden-message">
-                <p class="hidden-text">"다시 선택할 수 있다 해도,<br>난 여전히 너를 선택할 거야."</p>
-                <p class="hidden-footer">0729가 열어준 메시지</p>
-            </div>
+            
+            <button class="btn-next" onclick="showSection('mainScreen')" style="margin-top: 30px;">홈으로 🏠</button>
         </div>
     </div>
 
