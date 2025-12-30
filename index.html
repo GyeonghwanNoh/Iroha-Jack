@@ -25,6 +25,11 @@
     <div id="mainScreen" class="screen">
         <div class="main-container">
             <div class="main-content">
+                <div class="dday-container">
+                    <p class="dday-label">우리 함께한 지</p>
+                    <h3 class="dday-number" id="ddayCount">0</h3>
+                    <p class="dday-date">2024.09.03 ~</p>
+                </div>
                 <h2 class="main-title">"작은 비밀 공간을 하나 만들었어."</h2>
                 <p class="main-subtitle">오직 너만을 위해.</p>
                 <p class="main-text">"올해는 네가 웃는 모습으로 시작하고 싶었어."</p>
@@ -174,6 +179,36 @@
 
     <!-- Hidden Message -->
     <div id="hiddenSection" class="screen">
+            <button class="btn-next" onclick="showSection('letterSection2')">우리의 편지함 💌</button>
+        </div>
+    </div>
+
+    <!-- Letter Exchange Section -->
+    <div id="letterSection2" class="screen">
+        <div class="section-container">
+            <h2 class="section-title">우리의 편지함 💌</h2>
+            <p class="section-subtitle">"언제든 편지를 남겨줘"</p>
+            
+            <div class="letter-tabs">
+                <button class="tab-btn active" onclick="showTab('write')">편지 쓰기</button>
+                <button class="tab-btn" onclick="showTab('read')">편지 읽기</button>
+            </div>
+            
+            <!-- Write Letter Tab -->
+            <div id="writeTab" class="letter-tab active">
+                <div class="letter-form">
+                    <input type="text" id="letterFrom" class="letter-input" placeholder="보내는 사람 (너/나)" maxlength="10">
+                    <textarea id="letterContent" class="letter-textarea" placeholder="하고 싶은 말을 써줘..."></textarea>
+                    <button class="btn-send" onclick="sendLetter()">편지 보내기 💌</button>
+                </div>
+            </div>
+            
+            <!-- Read Letters Tab -->
+            <div id="readTab" class="letter-tab">
+                <div id="lettersContainer" class="letters-list">
+                    <p class="no-letters">아직 편지가 없어요</p>
+                </div>
+            </div>
         <div class="section-container">
             <div class="hidden-message">
                 <p class="hidden-text">"다시 선택할 수 있다 해도,<br>난 여전히 너를 선택할 거야."</p>

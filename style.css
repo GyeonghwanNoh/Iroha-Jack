@@ -111,6 +111,36 @@ body {
     box-shadow: 0 8px 32px rgba(201, 160, 160, 0.15);
 }
 
+/* D-day Counter */
+.dday-container {
+    background: linear-gradient(135deg, #FFE5E5 0%, #FFD5D5 100%);
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(201, 160, 160, 0.2);
+}
+
+.dday-label {
+    font-size: 0.9rem;
+    color: #8B7B7B;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.dday-number {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 3rem;
+    color: #C9A0A0;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.dday-date {
+    font-size: 0.85rem;
+    color: #B0A0A0;
+    margin-top: 5px;
+}
+
 .main-title {
     font-family: 'Quicksand', sans-serif;
     font-size: 2rem;
@@ -319,30 +349,201 @@ body {
     font-size: 2.5rem;
     color: #C9A0A0;
     margin-bottom: 30px;
-    font-weight: 600;
+   Letter Exchange Section */
+.letter-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.tab-btn {
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px solid #E8D5D5;
+    padding: 12px 30px;
+    border-radius: 15px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    color: #8B7B7B;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, #E8C5C5 0%, #C9A0A0 100%);
+    color: white;
+    border-color: #C9A0A0;
+}
+
+.letter-tab {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.letter-tab.active {
+    display: block;
+}
+
+.letter-form {
+    max-width: 500px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.letter-input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 2px solid #E8D5D5;
+    border-radius: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #5A4A42;
+    background: rgba(255, 255, 255, 0.8);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.letter-input:focus {
+    border-color: #C9A0A0;
+    box-shadow: 0 4px 15px rgba(201, 160, 160, 0.2);
+}
+
+.letter-textarea {
+    width: 100%;
+    min-height: 200px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #E8D5D5;
+    border-radius: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #5A4A42;
+    background: rgba(255, 255, 255, 0.8);
+    outline: none;
+    resize: vertical;
     line-height: 1.6;
+    transition: all 0.3s ease;
 }
 
-.hidden-footer {
-    font-size: 0.9rem;
-    color: #B0A0A0;
-    font-style: italic;
+.letter-textarea:focus {
+    border-color: #C9A0A0;
+    box-shadow: 0 4px 15px rgba(201, 160, 160, 0.2);
 }
 
-/* Next Button */
-.btn-next {
+.btn-send {
+    width: 100%;
     background: linear-gradient(135deg, #E8C5C5 0%, #C9A0A0 100%);
     color: white;
     border: none;
-    padding: 15px 40px;
+    padding: 15px;
     font-size: 1.1rem;
     font-family: 'Quicksand', sans-serif;
     font-weight: 500;
-    border-radius: 25px;
+    border-radius: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(201, 160, 160, 0.3);
 }
+
+.btn-send:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(201, 160, 160, 0.4);
+}
+
+.letters-list {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.no-letters {
+    text-align: center;
+    color: #B0A0A0;
+    font-style: italic;
+    padding: 40px;
+}
+
+.letter-card {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(201, 160, 160, 0.15);
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.letter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #E8D5D5;
+}
+
+.letter-from {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.1rem;
+    color: #C9A0A0;
+    font-weight: 600;
+}
+
+.letter-time {
+    font-size: 0.8rem;
+    color: #B0A0A0;
+}
+
+.letter-text {
+    color: #5A4A42;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .lock-title {
+        font-size: 2.5rem;
+    }
+    
+    .main-title {
+        font-size: 1.6rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .photos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .letter {
+        padding: 30px;
+    }
+    
+    .hidden-text {
+        font-size: 1.8rem;
+    }
+    
+    .dday-number {
+        font-size: 2.5rem;
+    }
+    
+    .letter-form {
+        padding: 20px
 
 .btn-next:hover {
     transform: translateY(-2px);
