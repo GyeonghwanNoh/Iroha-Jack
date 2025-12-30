@@ -645,47 +645,20 @@ body {
     }
     
     .photos-grid {
-        column-count: 2;
-        column-gap: 15px;
+        column-count: 1;
+        column-gap: 0;
+        max-width: 100%;
+        padding: 0 10px;
     }
     
-    .letter {
-        padding: 30px;
+    .photo-item {
+        margin-bottom: 15px;
+        width: 100%;
     }
     
-    .hidden-text {
-        font-size: 1.8rem;
-    }
-    
-    .dday-number {
-        font-size: 2.5rem;
-    }
-    
-    .letter-form {
-        padding: 20px
-
-.btn-next:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(201, 160, 160, 0.4);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .lock-title {
-        font-size: 2.5rem;
-    }
-    
-    .main-title {
-        font-size: 1.6rem;
-    }
-    
-    .section-title {
-        font-size: 2rem;
-    }
-    
-    .photos-grid {
-        column-count: 2;
-        column-gap: 15px;
+    .photo-item img {
+        width: 100%;
+        height: auto;
     }
     
     .letter {
@@ -708,6 +681,7 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
 
 /* Coupon Section */
 .coupon-card {
