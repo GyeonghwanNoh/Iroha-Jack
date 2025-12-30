@@ -632,6 +632,19 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .screen {
+        padding: 0;
+    }
+    
+    .screen.active {
+        padding: 0;
+    }
+    
     .lock-title {
         font-size: 2.5rem;
     }
@@ -643,10 +656,12 @@ body {
     .section-title {
         font-size: 2rem;
         margin-bottom: 20px;
+        padding: 0 15px;
     }
     
     .section-container {
-        padding: 20px 0;
+        padding: 20px 0 !important;
+        max-width: 100% !important;
     }
     
     .section-subtitle {
@@ -655,34 +670,41 @@ body {
     }
     
     .photos-grid {
-        column-count: 1;
-        column-gap: 0;
-        max-width: 100%;
-        padding: 0;
-        margin-bottom: 20px;
+        column-count: 1 !important;
+        column-gap: 0 !important;
+        max-width: 100vw !important;
+        width: 100vw !important;
+        padding: 0 !important;
+        margin: 0 0 20px 0 !important;
     }
     
     .photo-item {
-        margin-bottom: 8px;
-        width: 100%;
-        padding: 0;
-        background: transparent;
-        box-shadow: none;
-        border-radius: 0;
+        margin: 0 0 3px 0 !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        padding: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        break-inside: avoid;
     }
     
     .photo-item:hover {
-        transform: none;
+        transform: none !important;
     }
     
     .photo-box {
-        border-radius: 0;
+        border-radius: 0 !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
     }
     
     .photo-img {
-        width: 100%;
-        height: auto;
-        border-radius: 0;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        height: auto !important;
+        border-radius: 0 !important;
+        display: block !important;
     }
     
     .letter {
