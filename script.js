@@ -131,7 +131,85 @@ function showSection(sectionId) {
 // Show hidden message
 function showHidden() {
     playChime();
-    showSection('hiddenSection');
+    showSection('couponSection');
+    updateCouponDate();
+}
+
+// Coupon functionality
+const coupons = [
+    "오늘 하루 공주님 앞에서 졸려하지 않기 😴❌",
+    "키스 1시간 💋\n(중간 휴식 불가능)",
+    "오늘 하루 공주님만 바라보기 👀💕"
+];
+
+let todayCoupon = null;
+
+function updateCouponDate() {
+    const today = new Date();
+    const dateStr = today.toLocaleDateString('ko-KR', { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+    });
+    const dateElement = document.getElementById('couponDate');
+    if (dateElement) {
+        dateElement.textContent = dateStr;
+    }
+}
+
+function showCoupon() {
+    showSection('couponSection');
+    updateCouponDate();
+}
+
+function drawCoupon() {
+    playPop();
+    
+    // 오늘 날짜 확인
+    const today = new Date().toDateString();
+    const savedDate = localStorage.getItem('couponDate');
+    
+    // 이미 오늘 뽑았는지 확인
+    if (savedDate === today && todayCoupon !== null) {
+        return; // 이미 뽑았으면 무시
+    }
+    
+    // 새로운 쿠폰 뽑기
+    const randomIndex = Math.floor(Math.random() * coupons.length);
+    todayCoupon = coupons[randomIndex];
+    
+    // 로컬 스토리지에 저장
+    localStorage.setItem('couponDate', today);
+    localStorage.setItem('todayCoupon', todayCoupon);
+    
+    // 화면에 표시
+    const content = document.getElementById('couponContent');
+    if (content) {
+        content.innerHTML = `
+            <p class="coupon-text">${todayCoupon}</p>
+            <p class="coupon-notice">✨ 오늘 하루 유효한 쿠폰이에요!</p>
+        `;
+    }
+    
+    // 버튼 비활성화
+    const btn = document.querySelector('.btn-coupon');
+    if (btn) {
+        btn.textContent = '오늘은 이미 뽑았어요! 💝';
+        btn.disabled = true;
+        btn.style.opacity = '0.5';
+        btn.style.cursor = 'not-allowed';
+    }
+}
+
+// 페이지 로드시 오늘 뽑은 쿠폰 확인
+function checkTodayCoupon() {
+    const today = new Date().toDateString();
+    const savedDate = localStorage.getItem('couponDate');
+    const savedCoupon = localStorage.getItem('todayCoupon');
+    
+    if (savedDate === today && savedCoupon) {
+        todayCoupon = savedCoupon;
+    }
 }
 
 // D-day Calculator
@@ -212,6 +290,7 @@ function loadPhotos() {
 // Letter Exchange Functions
 function showTab(tabName) {
     const tabs = document.querySelectorAll('.letter-tab');
+    checkTodayCoupon();
     const btns = document.querySelectorAll('.tab-btn');
     
     tabs.forEach(tab => tab.classList.remove('active'));

@@ -47,9 +47,9 @@
                         <span class="menu-icon">✉️</span>
                         <span class="menu-text">우리의 편지함</span>
                     </button>
-                    <button class="menu-btn" onclick="showHidden()">
-                        <span class="menu-icon">🎁</span>
-                        <span class="menu-text">특별한 메시지</span>
+                    <button class="menu-btn" onclick="showCoupon()">
+                        <span class="menu-icon">🎫</span>
+                        <span class="menu-text">오늘 사용 가능한 쿠폰</span>
                     </button>
                 </div>
             </div>
@@ -90,14 +90,24 @@
         </div>
     </div>
 
-    <!-- Hidden Message -->
-    <div id="hiddenSection" class="screen">
+    <!-- Coupon Section -->
+    <div id="couponSection" class="screen">
         <div class="section-container">
-            <div class="hidden-message">
-                <p class="hidden-text">"다시 선택할 수 있다 해도,<br>난 여전히 너를 선택할 거야."</p>
-                <p class="hidden-footer">0729가 열어준 메시지</p>
+            <h2 class="section-title">🎫 오늘의 쿠폰</h2>
+            <p class="section-subtitle">"하루 한 번, 오늘만 사용 가능해"</p>
+            
+            <div class="coupon-card">
+                <div class="coupon-header">
+                    <span class="coupon-badge">TODAY ONLY</span>
+                    <span class="coupon-date" id="couponDate"></span>
+                </div>
+                <div class="coupon-content" id="couponContent">
+                    <p class="coupon-text">클릭해서 쿠폰 뽑기!</p>
+                </div>
+                <button class="btn-coupon" onclick="drawCoupon()">쿠폰 뽑기 🎫</button>
             </div>
-            <button class="btn-next" onclick="showSection('mainScreen')">홈으로 🏠</button>
+            
+            <button class="btn-next" onclick="showSection('mainScreen')" style="margin-top: 30px;">홈으로 🏠</button>
         </div>
     </div>
 
