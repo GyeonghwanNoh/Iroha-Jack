@@ -201,8 +201,7 @@ function loadPhotos() {
         
         photoItem.innerHTML = `
             <div class="photo-box">
-                <img src="photos/${photo.file}" alt="우리의 순간" class="photo-img" 
-                     onerror="this.parentElement.innerHTML='<span class=\\"photo-error\\">사진을 불러올 수 없어요</span>'">
+                <img src="photos/${photo.file}" alt="우리의 순간" class="photo-img">
             </div>
         `;
         

@@ -254,9 +254,8 @@ body {
 
 /* Photos Grid */
 .photos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
+    column-count: 3;
+    column-gap: 20px;
     margin-bottom: 50px;
 }
 
@@ -275,26 +274,22 @@ body {
 
 .photo-box {
     width: 100%;
-    aspect-ratio: 1;
-    background: linear-gradient(135deg, #FFE5E5 0%, #FFF0F0 100%);
     border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
     position: relative;
+    background: linear-gradient(135deg, #FFE5E5 0%, #FFF0F0 100%);
 }
 
 .photo-img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    display: block;
     border-radius: 15px;
     transition: all 0.3s ease;
 }
 
 .photo-item:hover .photo-img {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .photo-error {
@@ -606,7 +601,8 @@ body {
     }
     
     .photos-grid {
-        grid-template-columns: 1fr;
+        column-count: 2;
+        column-gap: 15px;
     }
     
     .letter {
@@ -644,8 +640,8 @@ body {
     }
     
     .photos-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 10px;
+        column-count: 2;
+        column-gap: 15px;
     }
     
     .letter {
