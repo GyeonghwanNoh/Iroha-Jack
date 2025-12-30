@@ -642,27 +642,52 @@ body {
     
     .section-title {
         font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    
+    .section-container {
+        padding: 20px 0;
+    }
+    
+    .section-subtitle {
+        margin-bottom: 20px;
+        padding: 0 15px;
     }
     
     .photos-grid {
         column-count: 1;
         column-gap: 0;
         max-width: 100%;
-        padding: 0 10px;
+        padding: 0;
+        margin-bottom: 20px;
     }
     
     .photo-item {
-        margin-bottom: 15px;
+        margin-bottom: 8px;
         width: 100%;
+        padding: 0;
+        background: transparent;
+        box-shadow: none;
+        border-radius: 0;
     }
     
-    .photo-item img {
+    .photo-item:hover {
+        transform: none;
+    }
+    
+    .photo-box {
+        border-radius: 0;
+    }
+    
+    .photo-img {
         width: 100%;
         height: auto;
+        border-radius: 0;
     }
     
     .letter {
         padding: 30px;
+        margin: 0 15px;
     }
     
     .hidden-text {
@@ -675,10 +700,15 @@ body {
     
     .letter-form {
         padding: 20px;
+        margin: 0 15px;
     }
     
     .menu-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .btn-next {
+        margin: 0 15px;
     }
 }
 
