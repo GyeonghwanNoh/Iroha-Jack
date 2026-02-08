@@ -4,7 +4,7 @@ const lockScreen = document.getElementById('lockScreen');
 const mainScreen = document.getElementById('mainScreen');
 const errorMsg = document.getElementById('errorMsg');
 
-const correctPassword = '0903';
+const correctPassword = '0904';
 
 // Firebase (Firestore)
 const firebaseConfig = {
@@ -235,7 +235,7 @@ function checkTodayCoupon() {
 
 // D-day Calculator
 function calculateDday() {
-    const startDate = new Date('2025-09-03');
+    const startDate = new Date('2025-09-04');
     const today = new Date();
     const diffTime = Math.abs(today - startDate);
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
