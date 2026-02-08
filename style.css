@@ -252,6 +252,49 @@ body {
     font-weight: 500;
 }
 
+.photo-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0 10px;
+}
+
+.photo-filter-btn {
+    border: 1px solid #E8D5D5;
+    background: rgba(255, 255, 255, 0.8);
+    color: #8B7B7B;
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.photo-filter-btn:hover {
+    border-color: #C9A0A0;
+    color: #5A4A42;
+}
+
+.photo-filter-btn.active {
+    background: linear-gradient(135deg, #FFE5E5 0%, #FFD5D5 100%);
+    border-color: #C9A0A0;
+    color: #5A4A42;
+    font-weight: 600;
+}
+
+.photo-group {
+    margin: 30px 0 60px;
+}
+
+.photo-group-title {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.4rem;
+    color: #C9A0A0;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
 /* Photos Grid - 모바일 기본 1열 */
 .photos-grid {
     display: grid;

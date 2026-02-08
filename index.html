@@ -60,11 +60,18 @@
     <div id="photosSection" class="screen">
         <div class="section-container">
             <h2 class="section-title">우리의 작은 순간들</h2>
-            <p class="section-date">2025년 11월</p>
+            <p class="section-date">월별로 정리했어</p>
             <p class="section-subtitle">"특별할 것 없어. 그냥 우리."</p>
-            
-            <div class="photos-grid" id="photosGrid">
-                <!-- 사진들이 자동으로 여기에 추가됩니다 -->
+
+            <div class="photo-filters">
+                <button class="photo-filter-btn active" data-month="all" onclick="filterPhotos('all')">전체</button>
+                <button class="photo-filter-btn" data-month="2025-11" onclick="filterPhotos('2025-11')">2025년 11월</button>
+                <button class="photo-filter-btn" data-month="2025-12" onclick="filterPhotos('2025-12')">2025년 12월</button>
+                <button class="photo-filter-btn" data-month="2026-01" onclick="filterPhotos('2026-01')">2026년 1월</button>
+            </div>
+
+            <div id="photosGroups">
+                <!-- 사진들이 월별로 자동 추가됩니다 -->
             </div>
             
             <button class="btn-next" onclick="showSection('mainScreen')">홈으로 🏠</button>
@@ -151,6 +158,8 @@
         </div>
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
