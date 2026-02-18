@@ -30,8 +30,8 @@ const emailConfig = {
     templateId: 'template_vz1qtpy',
     // 보내는 사람 기준으로 알림 받을 이메일 지정
     recipients: {
-        '공주님 💖': { email: 'iroha0805.168@yahoo.ne.jp', name: 'Iroha' },
-        '왕자님 💙': { email: 'korea07291@gmail.com', name: 'Korea' }
+        '공주님 💖': { email: 'korea07291@gmail.com', name: 'Korea' },
+        '왕자님 💙': { email: 'iroha0805.168@yahoo.ne.jp', name: 'Iroha' }
     }
 };
 
