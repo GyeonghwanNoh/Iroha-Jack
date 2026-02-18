@@ -80,6 +80,39 @@
 const correctPassword = '0729';  // 원하는 숫자로 변경
 ```
 
+## 📧 이메일 알림(선택)
+
+편지를 보내면 이메일로 “새 편지가 도착했어요” 알림을 받으려면 **EmailJS**를 사용하세요.
+
+### 1) EmailJS 가입 및 템플릿 생성
+1. [EmailJS](https://www.emailjs.com/) 가입 (무료)
+2. **Email Services**에서 Gmail 등 연결
+3. **Email Templates**에서 새 템플릿 생성
+
+**템플릿 변수 예시:**
+- `from_name`
+- `message`
+- `letter_time`
+- `to_email`
+- `to_name`
+
+### 2) `script.js` 설정
+`script.js` 상단의 `emailConfig`를 채워주세요:
+```javascript
+const emailConfig = {
+    enabled: true,
+    publicKey: 'YOUR_PUBLIC_KEY',
+    serviceId: 'YOUR_SERVICE_ID',
+    templateId: 'YOUR_TEMPLATE_ID',
+    recipients: {
+        '공주님 💖': { email: 'iroha0805.168@yahoo.ne.jp', name: 'Iroha' },
+        '왕자님 💙': { email: 'korea07291@gmail.com', name: 'Korea' }
+    }
+};
+```
+
+> `enabled`를 `true`로 바꾸면 편지 전송 시 이메일 알림이 전송됩니다.
+
 ## 📱 호환성
 
 - 모든 최신 브라우저 지원 (Chrome, Safari, Edge, Firefox)

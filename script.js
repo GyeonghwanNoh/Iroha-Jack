@@ -20,6 +20,23 @@ const firebaseConfig = {
 let db = null;
 let lettersUnsubscribe = null;
 
+// Email notifications (EmailJS)
+// 1) EmailJS 계정 생성 후, 아래 값 채우기
+// 2) enabled를 true로 변경하면 이메일 알림이 전송됩니다
+const emailConfig = {
+    enabled: true,
+    publicKey: 't2098UOv7kkTyyh1e',
+    serviceId: 'service_2f0apjn',
+    templateId: 'template_vz1qtpy',
+    // 보내는 사람 기준으로 알림 받을 이메일 지정
+    recipients: {
+        '공주님 💖': { email: 'iroha0805.168@yahoo.ne.jp', name: 'Iroha' },
+        '왕자님 💙': { email: 'korea07291@gmail.com', name: 'Korea' }
+    }
+};
+
+let emailInitialized = false;
+
 try {
     firebase.initializeApp(firebaseConfig);
     db = firebase.firestore();
@@ -494,6 +511,40 @@ function showTab(tabName) {
     }
 }
 
+function initEmailJs() {
+    if (!emailConfig.enabled) return false;
+    if (emailInitialized) return true;
+    if (!window.emailjs || !emailConfig.publicKey) return false;
+    window.emailjs.init(emailConfig.publicKey);
+    emailInitialized = true;
+    return true;
+}
+
+function sendEmailNotification(letter) {
+    if (!initEmailJs()) return Promise.resolve(false);
+
+    const recipient = emailConfig.recipients?.[letter.from] || null;
+    if (!recipient || !recipient.email) {
+        return Promise.resolve(false);
+    }
+
+    const params = {
+        from_name: letter.from,
+        message: letter.content,
+        letter_time: letter.date,
+        to_email: recipient.email,
+        to_name: recipient.name || 'You'
+    };
+
+    return window.emailjs
+        .send(emailConfig.serviceId, emailConfig.templateId, params)
+        .then(() => true)
+        .catch((error) => {
+            console.warn('Email notification failed:', error);
+            return false;
+        });
+}
+
 function sendLetter() {
     const fromRadio = document.querySelector('input[name="letterFrom"]:checked');
     const from = fromRadio ? fromRadio.value : '';
@@ -526,14 +577,15 @@ function sendLetter() {
 
     if (db) {
         db.collection('letters').add(letter)
+            .then(() => sendEmailNotification(letter))
             .then(finishSend)
             .catch(() => {
                 saveLetterLocal(letter);
-                finishSend();
+                sendEmailNotification(letter).finally(finishSend);
             });
     } else {
         saveLetterLocal(letter);
-        finishSend();
+        sendEmailNotification(letter).finally(finishSend);
     }
 }
 
